@@ -225,6 +225,10 @@ body{
         }
        
     }
+
+    .tituloRegistrarse{
+        text-align: center;
+    }
     .peliculasTendencia{
         width:80%;
         margin: 0 auto;
@@ -459,16 +463,13 @@ body{
     padding:20px;
     background-color:#9f3647;
     color:#ffffff;
-    height: 18vh;
+    height: 15vh;
     display:flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content:center;
     align-items: center;
     gap:20px;
-    .navegacion{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    
         .listaNav{
             list-style: none;
             display: flex;
@@ -480,6 +481,7 @@ body{
                     color:#ffffff;
                     font-weight: 700;
                     font-size: 1.2rem;
+                  
                 }
                 .administradorPeliculas{
                     background-color: #181419;
@@ -488,7 +490,7 @@ body{
                     border-radius: 5px;
                 }
             }
-        }
+        
     }
     .flechaArriba{
         position: fixed;
@@ -629,63 +631,9 @@ body{
     }
 }
 
-.main{
-    /*seccion de Administrador.html*/
-   .seccionAdministrador{
-       background-color:rgb(42, 42, 42);
-       width: 70%;
-       margin:0 auto;
-       border-radius: 5px;
-       display: flex;
-       flex-direction:column;
-       justify-content: center;
-       align-items: center;
-       font-size:1.2rem;
-       .tituloAdministrador{
-           font-size: 2.5rem;
-           font-weight: 700;
-           margin-bottom: 20px;
-       }
-
-       form{
-           width: 100%;
-           padding:40px;
-           input{
-               width: 100%;
-               margin-bottom: 10px;
-               height: 40px;
-               padding: 0px 20px;
-               font-size: 1.2rem;
-               border-radius: 10px;
-               border: 2px solid #9f3647;
-               background-color: #333333;
-               outline: none;
-               color:rgb(255, 255, 255);
-           } 
-           
-           .boton{                
-               display: flex;
-               justify-content: center;
-               align-items: center;               
-               width: 30%;                                                        
-               background-color:#9f3647;
-               border: 2px solid #9f3647;
-               color: #ffffff;
-               padding: 0.3rem 0.3rem;
-               border-radius: 5px;
-               font-size: 1rem;
-               font-weight: 500;           
-              
-           }
-           
-       }
-      
-   }
-
-}
 
 
-/*media querys para mobile PAGINA registrarse AUN NO LO TOQUE*/
+/*media querys para mobile PAGINA registrarse*/
 @media (max-width: 1200px) {
     .bodyRegistrarse{
         .headerRegistrarse{

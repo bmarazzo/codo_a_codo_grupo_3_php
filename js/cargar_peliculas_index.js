@@ -1,4 +1,7 @@
-const API_SERVER = 'https://api.themoviedb.org/3';
+const API_SERVER2 = 'https://api.themoviedb.org/3';
+
+const API_SERVER = 'http://localhost:8001/';
+
 const options = {
     method: 'GET', // Método de la petición (GET)
     headers: {
@@ -11,9 +14,10 @@ const options = {
 // Función para cargar películas en la cuadrícula de tendencias
 const cargarPeliculasTendencia = async (page = 1) => {
     // Realizamos una petición fetch a la API para obtener las películas populares
-    const response = await fetch(`${API_SERVER}/movie/popular?page=${page}`, options);
+    //const response = await fetch(`${API_SERVER}/movie/popular?page=${page}`, options);
+    const response = await fetch(API_SERVER);
     const data = await response.json(); // Convertimos la respuesta a JSON
-    const movies = data.results;// Extraemos las películas de la respuesta
+    const movies = data;// Extraemos las películas de la respuesta
     console.log(movies);
     const tendenciasContainer = document.querySelector('.peliculasTendencia .peliculas');// Seleccionamos el contenedor de películas de tendencia en el DOM, la section que tiene dentro el div peliculas
     tendenciasContainer.innerHTML = '';// Limpiamos el contenido previo del contenedor
@@ -37,7 +41,7 @@ const cargarPeliculasTendencia = async (page = 1) => {
         // creo la imagen
         const img = document.createElement('img');
         img.classList.add('imgTendencia');
-        img.src = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
+        img.src = `${API_SERVER}/${movie.img_url}`;
         img.alt = movie.title;
         img.loading = 'lazy';
         // creo el div tituloPelicula
@@ -45,12 +49,12 @@ const cargarPeliculasTendencia = async (page = 1) => {
         tituloPelicula.classList.add('tituloPelicula');
         // creo el h4
         const titulo = document.createElement('h4');
-        titulo.textContent = movie.title;
+        titulo.textContent = movie.titulo;
         // relaciono los elementos
         ancla.appendChild(pelicula);
-        pelicula.appendChild(img);
+        pelicula.appendChild(img);//<-------- aca debe ir la url de la imagen desde la columna img de la bbdd
         pelicula.appendChild(tituloPelicula);
-        tituloPelicula.appendChild(titulo);
+        tituloPelicula.appendChild(titulo); //<-----   aca va el nombre de la columna "titulo" de la bbdd
         tendenciasContainer.appendChild(ancla);
       
     });
@@ -62,7 +66,7 @@ const cargarPeliculasTendencia = async (page = 1) => {
 // Función para cargar películas en el carrusel de películas aclamadas
 const cargarPeliculasAclamadas = async () => {
     // Realizamos una petición fetch a la API para obtener las películas más aclamadas
-    const response = await fetch(`${API_SERVER}/movie/top_rated`, options);
+    const response = await fetch(`${API_SERVER2}/movie/top_rated`, options);
     const data = await response.json();// Convertimos la respuesta a JSON
     const movies = data.results; // Extraemos las películas de la respuesta
     const aclamadasContainer = document.querySelector('.aclamadas'); // Seleccionamos el contenedor de películas aclamadas en el DOM
