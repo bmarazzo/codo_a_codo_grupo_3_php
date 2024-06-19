@@ -54,14 +54,11 @@ const cargarPeliculasTendencia = async () => {
 
     // Función para editar película
             const editarPelicula = (movieId) => {
-            //window.location.href = `editar_pelicula.html?id=${movieId}`;
+     
             window.location.href = `/pages/peliculaEditada.html?id=${movieId}`;
 };
-/*
-    // Función para eliminar película
-            const eliminarPelicula = (movieId) => {
-            window.location.href = `eliminar_pelicula.html?id=${movieId}`;
-            */
+
+    // Función para eliminar película         
 
             const eliminarPelicula = async (movieId) => {
                 if (confirm('¿Estás seguro de que deseas eliminar esta película?')) {
@@ -88,6 +85,55 @@ const cargarPeliculasTendencia = async () => {
                     }
                 }
 
+/*
+                // Función para actualizar película
+                const actualizarPelicula = async (movieId, updatedData) => {
+                    try {
+                        const response = await fetch(`${API_SERVER}?id=${movieId}`, {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(updatedData)
+                        });
+                
+                        const data = await response.json();
+                
+                        if (data[0] === 'success') {
+                            alert('Película actualizada exitosamente');
+                            cargarPeliculasTendencia(); // Recargar la lista de películas
+                        } else {
+                            alert('Error al actualizar la película: ' + data[1]);
+                        }
+                    } catch (error) {
+                        console.error('Error al actualizar la película:', error);
+                        alert('Error al actualizar la película');
+                    }
+                };
+                
+                // Función para manejar la actualización de la película desde el formulario
+                const handleUpdateForm = (event) => {
+                    event.preventDefault();
+                
+                    const movieId = document.getElementById('movieId').value;
+                    const updatedData = {
+                        titulo: document.getElementById('titulo').value,
+                        descripcion: document.getElementById('descripcion').value,
+                        genero: document.getElementById('genero').value,
+                        calificacion: document.getElementById('calificacion').value,
+                        anio: document.getElementById('anio').value,
+                        estrellas: document.getElementById('estrellas').value,
+                        duracion: document.getElementById('duracion').value,
+                        img_url: document.getElementById('img_url').value
+                    };
+                
+                    actualizarPelicula(movieId, updatedData);
+                };
+                
+
+*/
+
+
 
 };
 
@@ -96,3 +142,7 @@ const cargarPeliculasTendencia = async () => {
 
 // Llamamos a la función para cargar las películas al cargar la página
 document.addEventListener('DOMContentLoaded', cargarPeliculasTendencia);
+
+
+// Asignar el manejador de eventos para el formulario de actualización
+//document.getElementById('updateForm').addEventListener('submit', handleUpdateForm);
