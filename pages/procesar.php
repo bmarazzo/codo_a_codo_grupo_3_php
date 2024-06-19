@@ -8,7 +8,7 @@ $error;
     if ($password == "password"){
         $error ="OK";
         //echo "accediendo";
-        header("Location:adminpeliculas.php");// voy a la página para cargar/editar peliculas
+        header("Location:listados.html");// voy a la página para cargar/editar peliculas
     } else {
         $error ="clave incorrecta";
         header("Location: inicioAdmin.php?error=$error");

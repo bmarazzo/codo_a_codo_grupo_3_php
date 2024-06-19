@@ -888,6 +888,10 @@ body{
     }
 }
 
+.boton {
+   margin-top:20px;
+  
+}
 hr{
     border: 1px solid #9f3647;
     width: 80%;

@@ -6,6 +6,7 @@
     <title>Admin | CAC-MOVIES</title>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/peliculaEditada.css">
     <script src="https://kit.fontawesome.com/f7fb471b65.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
@@ -90,7 +91,7 @@
                 </div>
                 <div>
                     <label for="estrellas">Estrellas:</label>
-                    <input type="text" id="estrellas" name="estrellas" value="<?php echo ($_POST['estrellas']) ? ($_POST['estrellas']) : ''; ?>">
+                    <input type="text" id="estrellas" name="estrellas" value="<?php echo ($_GET['estrellas']) ? ($_GET['estrellas']) : ''; ?>">
                     <?php 
                     if (isset($_GET['error6'])){
                         $error6 = $_GET['error6'];            
@@ -100,7 +101,7 @@
                 </div>
                 <div>
                     <label for="duracion">Duración:</label>
-                    <input type="text" id="duracion" name="duracion" value="<?php echo ($_POST['duracion']) ? ($_POST['duracion']) : ''; ?>">
+                    <input type="text" id="duracion" name="duracion" value="<?php echo ($_GET['duracion']) ? ($_GET['duracion']) : ''; ?>">
                     <?php 
                     if (isset($_GET['error7'])){
                         $error7 = $_GET['error7'];            
@@ -118,8 +119,15 @@
                     }
                     ?>
                 </div>
-                <div>
-                    <input class="boton" type="submit" value="Guardar">
+                <div class="comandos">
+                    <div >
+                        <input class="boton" type="submit" value="Guardar">
+                    
+                    </div>
+                    <div>
+                        
+                        <button class="boton btn-volver" type=""  ><a class="volver" href="/pages/listados.html">Volver</a></button> 
+                    </div>
                 </div>
             </form>
         </section>

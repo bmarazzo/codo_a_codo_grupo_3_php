@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador de peliculas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/listados.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="https://kit.fontawesome.com/f7fb471b65.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body class="body">
+
+
+    <header class="header">
+        <nav class="navegacion">
+            <a class="anclaLogo" href="/">
+                <i class="fas fa-film" aria-hidden="true"></i>
+                <span>CAC-Movies</span>
+            </a>
+            
+        </nav>
+    </header>
+
+    <div class="container mt-5 principal">
+        <div class="row mb-3">
+        </div>
+        <div class="row  mb-3 text-center">
+            <div class="col-3 fw-bold"></div>
+            <div class="col-3 fw-bold"><h2>Películas</h2></div>
+            <div class="col-3 fw-bold"></div>
+            <div class="col-3 text-end">
+                <button  type="submit" class="btn btn-success btn-sm"  ><a   class="btn btn-success " href="/pages/adminpeliculas.php" >Agregar pelicula</a></button>
+            </div>
+        </div>
+
+        <div class="row border-bottom mb-3 text-center">
+            <div class="col-3 fw-bold">Id</div>
+            <div class="col-3 fw-bold">Título</div>
+            <div class="col-3 fw-bold">Duración (minutos)</div>
+            <div class="col-3 fw-bold text-end">Acciones</div>
+        </div>
+        <div id="peliculasContainer">
+            <!-- Aquí se cargarán las películas desde la API -->
+        </div>
+    </div>
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/cargar_pelis_listado.js"></script>
+</body>
+</html>

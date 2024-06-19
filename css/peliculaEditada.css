@@ -1,0 +1,19 @@
+.comandos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   margin: auto;
+
+}
+.btn-volver{
+    color: white;
+   
+
+}
+.volver {
+    text-decoration: none !important;
+    color: white;
+}
+.boton{
+    width: 100% !important;
+}
