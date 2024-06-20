@@ -10,6 +10,8 @@
     <script src="https://kit.fontawesome.com/f7fb471b65.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    
 </head>
 <body class="bodyRegistrarse">
     <header class="headerRegistrarse">
@@ -21,7 +23,7 @@
     
     <main id="main" class="main">
         <section data-aos="zoom-in" data-aos-duration="1000" class="seccionAdministrador">
-            <form action="http://localhost:8001/index.php" method="POST" id="form-registro" enctype="multipart/form-data">
+            <form action="http://localhost:8001/index.php" method="POST" id="form-pelicula" enctype="multipart/form-data">
                 <h2 class="tituloAdministrador">Administrador</h2>
 
                 <h4>Ingresar Nueva Película:</h4>
@@ -43,7 +45,12 @@
                 <div>
                     <label for="titulo">Título:</label>
                     <input type="text" id="titulo" name="titulo" value="<?php echo ($_GET['titulo']) ? $_GET['titulo'] : ''; ?>">
-                   
+                    <?php 
+                    if (isset($_GET['error'])){
+                        $error = $_GET['error'];            
+                        echo "<h3 style='text-align:center;'>$error</h3>";
+                    }
+                    ?>
                 </div>
 
                 <div>
@@ -111,7 +118,7 @@
                 </div>
                 <div>
                     <label for="img_url">Elige una imagen JPG:</label>
-                    <input type="file" name="img_url" id="file" accept=".jpg, .jpeg">
+                    <input type="file" name="img_url"  id="img_url" accept=".jpg, .jpeg">
                     <?php 
                     if (isset($_GET['error8'])){
                         $error8 = $_GET['error8'];            
@@ -121,8 +128,8 @@
                 </div>
                 <div class="comandos">
                     <div >
-                        <input class="boton" type="submit" value="Guardar">
-                    
+                       
+                        <input class="boton" type="submit" value="Guardar" onclick="validarFormulario(event)">
                     </div>
                     <div>
                         
@@ -136,6 +143,8 @@
     <script>
         AOS.init();
     </script>
-    <script src="../js/valida_registrarse.js"></script>
+    <script src="/js/validar_pelicula.js"></script>
+
+   
 </body>
 </html>
