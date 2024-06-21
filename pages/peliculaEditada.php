@@ -127,7 +127,7 @@
                     <?php 
                     if (isset($_GET['error8'])){
                         $error8 = $_GET['error8'];            
-                        echo "<h3 style='text-align:center;'>$error8</h3>";
+                        echo "<h3 style='text-align:center; color:red'>$error8</h3>";
                     }
                     ?>
                 </div>

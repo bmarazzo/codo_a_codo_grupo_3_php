@@ -25,7 +25,7 @@
     
     <main id="main" class="main">
         <section data-aos="zoom-in" data-aos-duration="1000" class="seccionAdministrador">
-            <form action="http://localhost:8001/index.php" method="POST" id="form-pelicula" enctype="multipart/form-data">
+            <form action="http://localhost:8001/index.php" method="POST" id="form-pelicula-editada" enctype="multipart/form-data">
                 <h2 class="tituloAdministrador">Administrador</h2>
 
                 <h4>Ingresar Nueva Película:</h4>
@@ -144,8 +144,7 @@
     <script>
         AOS.init();
     </script>
-    <script src="../js/validar_pelicula.js"></script>
-
+     <script src="../js/validar_pelicula_editada.js"></script>
    
 </body>
 </html>
