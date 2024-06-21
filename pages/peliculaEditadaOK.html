@@ -70,16 +70,16 @@
                 
                 <div>
                     <label for="img_url">Elige una imagen JPG:</label>
-                    <input type="text" id="img_url" name="img_url" value="">
+                    <input type="text" id="img_url" name="img_url" value="" hidden>
                     <input type="file" name="img_url" id="img_url" accept=".jpg, .jpeg">
                 </div>
                 
-                <div class="comandos">
+                
+                </div><div class="comandos">
                     <div >
-                        <input class="boton" type="submit" value="Guardar" >
-                    
+                       
+                        <input class="btn-guardar boton" type="submit" value="Guardar" >
                     </div>
-                    <div>
                         
                         <button class="boton btn-volver" type=""  ><a class="volver" href="/pages/listados.html">Volver</a></button> 
                     </div>
@@ -137,5 +137,7 @@
         // Llamar a la función para cargar datos de la película cuando el documento esté listo
         document.addEventListener('DOMContentLoaded', cargarDatosPelicula);
     </script>
+
+    <script src="../js/validar_pelicula.js"></script>
 </body>
 </html>

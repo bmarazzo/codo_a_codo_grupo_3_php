@@ -7,13 +7,14 @@
 }
 .btn-volver{
     color: white;
-   
+    width: 100% !important ;
 
 }
 .volver {
     text-decoration: none !important;
     color: white;
+  
 }
-.boton{
+.btn-guardar{
     width: 100% !important;
 }

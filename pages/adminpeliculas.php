@@ -130,13 +130,11 @@
                     ?>
                 </div>
                 <div class="comandos">
-                    <div >
-                       
-                        <input class="boton" type="submit" value="Guardar" >
+                    <div >                   
+                        <input class="btn-guardar boton" type="submit" value="Guardar" >
                     </div>
-                    <div>
-                        
-                        <button class="boton btn-volver" type=""  ><a class="volver" href="/pages/listados.html">Volver</a></button> 
+                    <div>                    
+                        <button class="boton btn-volver" type=""><a class="volver" href="/pages/listados.html">Volver</a></button> 
                     </div>
                 </div>
             </form>
