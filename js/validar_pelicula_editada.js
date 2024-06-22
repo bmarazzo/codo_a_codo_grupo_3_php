@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('#form-pelicula');
+    const form = document.querySelector('#form-pelicula-editada');
 
    form.addEventListener('submit', (e) => {
         // Obtén los valores de los campos del formulario

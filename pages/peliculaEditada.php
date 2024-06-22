@@ -22,7 +22,7 @@
     <main id="main" class="main">
         <section data-aos="zoom-in" data-aos-duration="1000" class="seccionAdministrador">
          
-            <form action="http://localhost:8001/index.php" method="POST" id="form-pelicula" enctype="multipart/form-data">
+            <form action="http://localhost:8001/index.php" method="POST" id="form-pelicula-editada" enctype="multipart/form-data">
             <input type="hidden" name="_method" value="PUT">
 
                 <h2 class="tituloAdministrador">Editar película</h2>
@@ -189,6 +189,6 @@
         // Llamar a la función para cargar datos de la película cuando el documento esté listo
         document.addEventListener('DOMContentLoaded', cargarDatosPelicula);        
     </script>
-     <script src="../js/validar_pelicula.js"></script>
+     <script src="../js/validar_pelicula_editada.js"></script>
 </body>
 </html>
