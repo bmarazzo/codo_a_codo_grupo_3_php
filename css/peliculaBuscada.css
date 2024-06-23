@@ -1,0 +1,45 @@
+
+        .pelicula {
+            background-color: rgb(77, 72, 72);
+           margin: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+         
+        }
+        .pelicula img {
+            width: 200px;
+            height: 200px;
+            border-radius: 5px;
+            
+        }
+        .pelicula .titulo {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .pelicula .descripcion {
+            margin-top: 10px;
+            font-weight: 200;
+        }
+        .pelicula .detalles {
+            margin-top: 10px;
+            font-weight: 200;
+
+        }
+    .titulo {
+        text-align: center;
+        margin-top: 20px;
+    
+    }
+    .titulo h1{
+    
+       margin-bottom: 25px;
+    }
+    .buscadas{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 60px;
+    }
