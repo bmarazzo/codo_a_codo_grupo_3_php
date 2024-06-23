@@ -1,7 +1,7 @@
 
 
 
-import { API_SERVER, API_SERVER2 } from "./constantes.js";
+import { API_SERVER, API_SERVER2, API_SERVER3 } from "./constantes.js";
 
 
 const options = {
@@ -84,7 +84,7 @@ const cargarPeliculasAclamadas = async () => {
         // creo la imagen
         const img = document.createElement('img');
         img.classList.add('imgAclamada');
-        img.src = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
+        img.src = `${API_SERVER3}${movie.poster_path}`;
         img.alt = movie.title;
         img.loading = 'lazy';
         // relaciono los elementos

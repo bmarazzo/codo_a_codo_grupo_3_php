@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 
-
+    const form3 = document.getElementById('form-pelicula-editada');
+    if (form3) {
+        form3.setAttribute('action', `${API_SERVER}/index.php`);
+    }
 
 });

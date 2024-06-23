@@ -22,7 +22,7 @@
     <main id="main" class="main">
         <section data-aos="zoom-in" data-aos-duration="1000" class="seccionAdministrador">
          
-            <form action="http://localhost:8001/index.php" method="POST" id="form-pelicula-editada" enctype="multipart/form-data">
+            <form action="" method="POST" id="form-pelicula-editada" enctype="multipart/form-data">
             <input type="hidden" name="_method" value="PUT">
 
                 <h2 class="tituloAdministrador">Editar película</h2>
@@ -40,8 +40,8 @@
                 ?>
 
                 <div>
-                    <label for="id">Id:</label>
-                    <input type="text" id="id" name="id" value="" >
+                   
+                    <input type="text" id="id" name="id" value="" hidden >
                 </div>
                       
                 <div>
@@ -190,5 +190,6 @@
         document.addEventListener('DOMContentLoaded', cargarDatosPelicula);        
     </script>
      <script src="../js/validar_pelicula_editada.js"></script>
+     <script  type="module" src="../js/cargar_server.js"></script>
 </body>
 </html>
