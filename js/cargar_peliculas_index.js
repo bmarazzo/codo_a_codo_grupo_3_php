@@ -1,6 +1,8 @@
-const API_SERVER2 = 'https://api.themoviedb.org/3';
 
-const API_SERVER = 'http://localhost:8001/';
+
+
+import { API_SERVER, API_SERVER2 } from "./constantes.js";
+
 
 const options = {
     method: 'GET', // Método de la petición (GET)

@@ -22,8 +22,8 @@
             </a>
             <ul class="listaNav">
                 <li class="listaItem"><a class="linkNav" href="#tendencias">Tendencias</a></li>
-                <li class="listaItem"><a class="linkNav" href="./pages/registrarse.html">Registrarse</a></li>
-                <li class="listaItem"><a class="linkNav iniciarSesion" href="./pages/iniciosesion.html">Iniciar Sesión</a></li>
+                <li class="listaItem"><a class="linkNav" href="../pages/registrarse.html">Registrarse</a></li>
+                <li class="listaItem"><a class="linkNav iniciarSesion" href="../pages/iniciosesion.html">Iniciar Sesión</a></li>
             </ul>
         </nav>
     </header>
@@ -55,6 +55,6 @@
 
     </main>
 
-    <script src="../js/pelicula_buscada.js"></script>
+    <script  type="module"  src="../js/pelicula_buscada.js"></script>
 </body>
 </html>

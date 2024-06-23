@@ -1,6 +1,6 @@
 
+import { API_SERVER } from "./constantes.js";
 
-const API_SERVER = 'http://localhost:8001/';
 
 
 // Función para cargar películas en la cuadrícula

@@ -34,7 +34,7 @@
             <h2 class="tituloSection">¿Qué estas buscando para ver?</h2>
 
             <!--   buscador de peliculas por titulo y descripcion -->
-            <form class="buscadorPeliculas" action="http://localhost:8001/index.php" id="buscar">
+            <form class="buscadorPeliculas" action="" id="form-buscar">
                 <input class="inputBuscador" type="text" placeholder="Buscar..." id="buscar" name="buscar">
                 <input class="botonBuscador" type="submit" value="Buscar">
             </form>
@@ -76,7 +76,8 @@
         AOS.init();
     </script>
     <!--script que trae peliculas de un servidor de tercero y crea cada pelicula en el dom-->
-    <script src="./js/cargar_peliculas_index.js"></script>
+    <script  type="module" src="./js/cargar_peliculas_index.js"></script>
+    <script  type="module" src="./js/cargar_server.js"></script>
 </body>
 </html>
 
