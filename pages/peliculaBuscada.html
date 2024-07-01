@@ -32,25 +32,9 @@
 
         <div class="container  titulo">
             <h1>Películas buscadas</h1>
-            <div id="peliculas" class="buscadas">
+            <div id="peliculas" class="buscadas"></div>
+            <!-- Contenedor dinámico de películas buscadas-->
             
-            <?php
-                session_start();
-                if (isset($_SESSION['peliculas'])) {
-                    $peliculas_json = $_SESSION['peliculas'];
-                    $peliculas = json_decode($peliculas_json, true);
-                    
-                    if (!empty($peliculas)) {
-                        echo '<script>';
-                        echo 'const peliculas = ' . json_encode($peliculas) . ';';
-                        echo '</script>';
-                    } else {
-                        echo 'No se han recibido datos de películas.';
-                    }
-                } else {
-                    echo 'No se han recibido datos de películas.';
-                }
-            ?>
         </div>
 
     </main>

@@ -12,7 +12,7 @@
 </head>
 <body class="bodyRegistrarse">
     <header class="headerRegistrarse">
-        <a class="anclaLogo" href="../index.html">
+        <a class="anclaLogo" href="../index.php">
             <i class="fas fa-film" aria-hidden="true"></i>
             <span>CAC-Movies</span>
         </a>
@@ -20,7 +20,7 @@
     <main id="main" class="main">
         <section data-aos="zoom-in" data-aos-duration="1000" class="seccionRegistrarse">
             <!--pongo get ya que en github pages da error el method post-->
-            <form id="form-admin" action="procesar.php" method="POST">
+            <form id="form-admin" action="listados.html">
                 <h2 class="tituloRegistrarse">Administrador</h2>
                 
                 <div>
@@ -28,18 +28,6 @@
                     <div id="error-password" class="error-text"></div>
                 </div>
 
-                <?php  
-                    if (isset($_GET['error'])){
-                        $error =$_GET['error'];
-                        if ($error == "clave incorrecta"){
-                            echo "<h3 style= 'text-align:center; margin-bottom:30px'>Clave incorrecta</h3>";
-                        }
-                        if ($error == "completar clave"){
-                            echo "<h3>Contraseña vacía</h3>";
-                        }
-                    }
-
-                ?> 
                 <div>
                     <input class="boton" type="submit" value="Iniciar Sesión" id="btn-envio-login-admin">
                 </div>

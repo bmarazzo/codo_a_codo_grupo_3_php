@@ -52,30 +52,37 @@ const cargarPeliculasTendencia = async () => {
     // Función para editar película
             const editarPelicula = (movieId) => {
      
-            window.location.href = `/pages/peliculaEditada.php?id=${movieId}`;
+            window.location.href = `/pages/peliculaEditada.html?id=${movieId}`;
 };
-
+          
     // Función para eliminar película         
-
+   
             const eliminarPelicula = async (movieId) => {
+
                 if (confirm('¿Estás seguro de que deseas eliminar esta película?')) {
                     try {
-                        const response = await fetch(`${API_SERVER}?id=${movieId}`, {
-                            method: 'DELETE',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({ id: movieId })
+
+                        const response = await fetch(`${API_SERVER}/?id=${movieId}&action=delete`, {
+                            method: 'GET',
+                            mode: 'cors'
                         });
-            
-                        const data = await response.json();
-            
-                        if (data[0] === 'success') {
+
+                       /*
+                        const response = await fetch(`${API_SERVER}/?id=${movieId}`, {
+                            method: 'DELETE',                         
+                            headers: {
+                               'Content-Type': 'application/json'
+                            }
+                        });
+                      */
+                        
+                        if (response.ok) {
                             alert('Película eliminada exitosamente');
                             cargarPeliculasTendencia(); // Recargar la lista de películas
                         } else {
+                            const data = await response.json();
                             alert('Error al eliminar la película: ' + data[1]);
-                        }
+                        }   
                     } catch (error) {
                         console.error('Error al eliminar la película:', error);
                         alert('Error al eliminar la película');

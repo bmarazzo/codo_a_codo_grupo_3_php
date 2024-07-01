@@ -17,22 +17,20 @@ const options = {
 const cargarPeliculasTendencia = async (page = 1) => {
     // Realizamos una petición fetch a la API para obtener las películas populares
     //const response = await fetch(`${API_SERVER}/movie/popular?page=${page}`, options);
-    const response = await fetch(API_SERVER);
+   // const response = await fetch(API_SERVER);
+
+    const response = await fetch((API_SERVER), {
+        mode: 'cors'
+    });
+
     const data = await response.json(); // Convertimos la respuesta a JSON
     const movies = data;// Extraemos las películas de la respuesta
-    console.log(movies);
+    //console.log(movies);
     const tendenciasContainer = document.querySelector('.peliculasTendencia .peliculas');// Seleccionamos el contenedor de películas de tendencia en el DOM, la section que tiene dentro el div peliculas
     tendenciasContainer.innerHTML = '';// Limpiamos el contenido previo del contenedor
 
     //* Iteramos sobre cada película obtenida y creamos los elementos HTML para mostrar la película teniendo que en cuenta que se debe respetar la siguiente estructura por los estilos:
-    /*<a href="./pages/detalle.html">
-                    <div class="pelicula">
-                        <img class="imgTendencia" src="./assets/img/peli_1.jpg" alt="The Beekeeper" loading="lazy">
-                        <div class="tituloPelicula">
-                            <h4>The Beekeeper</h4>
-                        </div>
-                    </div>
-      </a>*/
+    
     movies.forEach(movie => {
         // creo el ancla
         const ancla = document.createElement('a');

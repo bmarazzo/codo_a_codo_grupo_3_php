@@ -12,7 +12,7 @@
 </head>
 <body class="bodyRegistrarse">
     <header class="headerRegistrarse">
-        <a class="anclaLogo" href="../index.html">
+        <a class="anclaLogo" href="../index.php">
             <i class="fas fa-film" aria-hidden="true"></i>
             <span>CAC-Movies</span>
         </a>
