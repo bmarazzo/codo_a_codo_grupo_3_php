@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | CAC-MOVIES</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/peliculaEditada.css">
+    <script src="https://kit.fontawesome.com/f7fb471b65.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+</head>
+<body class="bodyRegistrarse">
+    <header class="headerRegistrarse">
+        <a class="anclaLogo" href="../index.php">
+            <i class="fas fa-film" aria-hidden="true"></i>
+            <span>CAC-Movies</span>
+        </a>
+    </header>
+    
+    <main id="main" class="main">
+        <section data-aos="zoom-in" data-aos-duration="1000" class="seccionAdministrador">
+            <form action="" method="POST" id="form-pelicula" enctype="multipart/form-data">
+                <h2 class="tituloAdministrador">Administrador</h2>
+
+                <h4>Ingresar Nueva Película:</h4>
+
+                
+                <div>
+                    <label for="titulo">Título:</label>
+                    <input type="text" id="titulo" name="titulo" value="">                     
+                </div>
+
+                <div>
+                    <label for="genero">Género:</label>
+                    <input type="text" id="genero" name="genero" value="">
+                    
+                </div>
+
+                <div>
+                    <label for="calificacion">Clasificación:</label>
+                    <input type="text" id="calificacion" name="calificacion" value="">                   
+                </div>
+
+                <div>
+                    <label for="descripcion">Descripción:</label>
+                    <input type="text" id="descripcion" name="descripcion" value="">                    
+                </div>
+
+                <div>
+                    <label for="anio">Año de Estreno:</label>
+                    <input type="text" id="anio" name="anio" value="">                  
+                </div>
+                
+                <div>
+                    <label for="estrellas">Estrellas:</label>
+                    <input type="text" id="estrellas" name="estrellas" value="">                  
+                </div>
+
+                <div>
+                    <label for="duracion">Duración:</label>
+                    <input type="text" id="duracion" name="duracion" value="">                   
+                </div>
+
+                <div>
+                    <label for="img_url">Elige una imagen JPG:</label>
+                   
+                    <input type="file" name="img_url" id="img_url" accept=".jpg, .jpeg" value="" >                   
+                </div>
+
+                <div class="comandos">
+                    <div>
+                        <input class="btn-guardar boton" type="submit" value="Guardar">
+                    </div>
+                    <div>
+                        <button class="boton btn-volver" type="button">
+                            <a class="volver" href="/pages/listados.html">Volver</a>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+    
+    <script  type="module">
+
+     import { API_SERVER } from "../../js/constantes.js";    
+        //para mostrar un alert con el mensaje
+    document.getElementById('form-pelicula').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evitar que se envíe el formulario de forma tradicional
+      
+        fetch(API_SERVER, {
+          method: 'POST',
+          body: new FormData(document.getElementById('form-pelicula'))
+        })
+        .then(response => response.json())
+        .then(data => {
+          if(data[0] === 'success') {
+            alert(data[1]);
+          } else {
+            alert('Error al guardar la película');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('Ocurrió un error al intentar guardar la película');
+        });
+      });
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="../js/validar_pelicula.js"></script>
+    <script type="module" src="../js/cargar_server.js"></script>
+</body>
+</html>

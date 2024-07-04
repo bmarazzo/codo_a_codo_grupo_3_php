@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Función para validar todo el formulario
     const validateForm = () => {
         let isValid = true;
-        isValid = validateEmailField('email', 'El correo electrónico no es válido') && isValid; // Validar campo de email
+        isValid = validateEmailField('email', 'El correo electrónico es obligatorio') && isValid; // Validar campo de email
         isValid = validateField('password', 'La contraseña es obligatoria') && isValid; // Validar campo de contraseña
         return isValid;
     };
@@ -32,6 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Si el valor del campo está vacío
         if (value === '') {
             setErrorFor(field, errorMessage);  // Establece un mensaje de error para el campo
+
+            
+             // se reproduce mensaje
+             const mensaje = new SpeechSynthesisUtterance();
+             mensaje.text = errorMessage;           
+             speechSynthesis.speak(mensaje);
+
+
             return false; // Devuelve false indicando que la validación ha fallado
         } else {
            setSuccessFor(field); // Si el valor del campo no está vacío, elimina cualquier mensaje de error anterior
@@ -50,12 +58,25 @@ document.addEventListener('DOMContentLoaded', () => {
             // Establece un mensaje de error para el campo de correo electrónico
             setErrorFor(field, 'El correo electrónico es obligatorio');
             // Devuelve false indicando que la validación ha fallado
+
+
+
+
+             // se reproduce mensaje
+             const mensaje = new SpeechSynthesisUtterance();
+             mensaje.text = errorMessage;           
+             speechSynthesis.speak(mensaje);
+
+
             return false;
         // Si el campo de correo electrónico no está vacío pero no es válido
         } else if (!isEmail(email)) {
             // Establece un mensaje de error para el campo de correo electrónico
             setErrorFor(field, errorMessage);
             // Devuelve false indicando que la validación ha fallado
+
+
+            
             return false;
         } else {
             // Si el campo de correo electrónico es válido, elimina cualquier mensaje de error anterior
