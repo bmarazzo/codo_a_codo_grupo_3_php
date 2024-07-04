@@ -38,6 +38,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!terminos) {
             isValid = false;
             setErrorFor(document.getElementById('terminos'), 'Debes aceptar los términos y condiciones');
+
+            
+                // se reproduce mensaje
+                const mensaje = new SpeechSynthesisUtterance();
+                mensaje.text = 'Debes aceptar los términos y condiciones';         
+                speechSynthesis.speak(mensaje);
+
+
+            //isValid = validateField('terminos', 'Debes aceptar los términos y condiciones');
         } else {
             setSuccessFor(document.getElementById('terminos'));
         }
@@ -52,6 +61,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (value === '') {
             //invoca la función setErrorFor y le pasa el campo y el mensaje de error
             setErrorFor(field, errorMessage);
+
+
+
+                // se reproduce mensaje
+                const mensaje = new SpeechSynthesisUtterance();
+                mensaje.text = errorMessage;         
+                speechSynthesis.speak(mensaje);
+
+
             return false;
         } else {
             //invoca la función setSuccessFor y le pasa el campo
