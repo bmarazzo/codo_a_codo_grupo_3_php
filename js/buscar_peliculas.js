@@ -17,7 +17,7 @@ async function buscarPeliculas(event) {
             const data = await response.json();
             // Guarda los datos de las películas en localStorage para usarlos en peliculaBuscada.html
             localStorage.setItem('peliculasBuscadas', JSON.stringify(data));
-            window.location.href = 'pages/peliculaBuscada.html';
+            window.location.href = './pages/peliculaBuscada.html';
         } catch (error) {
             console.error('Error al buscar películas:', error);
         }

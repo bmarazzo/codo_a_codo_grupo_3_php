@@ -18,7 +18,8 @@ const cargarPeliculasTendencia = async () => {
             row.className = 'row mb-2 text-center';
             
             row.innerHTML = `
-                <div class="col-3">${movie.id}</div>
+                 <div class="col-3"><img  class="img-listado"  src="${API_SERVER}/${movie.img_url}"></div>
+               
                 <div class="col-3">${movie.titulo}</div>
                 <div class="col-3">${movie.duracion || 'N/A'}</div>
                 <div class="col-3 text-end">
@@ -52,7 +53,7 @@ const cargarPeliculasTendencia = async () => {
     // Función para editar película
             const editarPelicula = (movieId) => {
      
-            window.location.href = `/pages/peliculaEditada.html?id=${movieId}`;
+            window.location.href = `peliculaEditada.html?id=${movieId}`;
 };
           
     // Función para eliminar película         
