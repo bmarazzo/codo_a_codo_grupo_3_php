@@ -53,7 +53,7 @@ const cargarPeliculasTendencia = async () => {
     // Función para editar película
             const editarPelicula = (movieId) => {
      
-            window.location.href = `/pages/peliculaEditada.html?id=${movieId}`;
+            window.location.href = `./pages/peliculaEditada.html?id=${movieId}`;
 };
           
     // Función para eliminar película         
